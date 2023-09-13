@@ -1,0 +1,13 @@
+services:
+  eureka-server:
+    build: .
+    container_name: apigateway
+    ports:
+      - '8080:8080'
+    networks:
+      - ms-network
+
+networks:
+  ms-network:
+    external: true
+    name: ms-network
