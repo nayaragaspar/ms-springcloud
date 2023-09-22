@@ -1,5 +1,5 @@
 services:
-  eureka-server:
+  apigateway:
     build: .
     container_name: apigateway
     ports:
