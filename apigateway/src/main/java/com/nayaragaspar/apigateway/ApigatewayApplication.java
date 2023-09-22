@@ -7,6 +7,8 @@ import org.springframework.cloud.gateway.route.RouteLocator;
 import org.springframework.cloud.gateway.route.builder.RouteLocatorBuilder;
 import org.springframework.context.annotation.Bean;
 
+import com.nayaragaspar.apigateway.auth.ApiKeyFilter;
+
 @SpringBootApplication
 @EnableDiscoveryClient
 public class ApigatewayApplication {
@@ -19,7 +21,9 @@ public class ApigatewayApplication {
 	public RouteLocator routes(RouteLocatorBuilder builder) {
 		return builder
 				.routes()
-				.route(r -> r.path("/notification/**").uri("lb://msnotification"))
+				.route(r -> r.path("/notification/**")
+						.filters(f -> f.filter(new ApiKeyFilter()))
+						.uri("lb://msnotification"))
 				.build();
 	}
 }
