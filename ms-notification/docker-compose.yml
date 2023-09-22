@@ -8,6 +8,9 @@ services:
       - ./logs:/var/lib/logs
     env_file:
       - .env
+    #environment:
+    #  - ACCESS_KEY=AKIAV7VTNWHUEXAMPLE
+    #  - SECRET_KEY=w6aTllCxi6EPFO1I20fp4H5KM6TEXAMPLE
 
 networks:
   ms-network:
