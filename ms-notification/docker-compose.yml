@@ -1,0 +1,15 @@
+services:
+  msnotification:
+    build: .
+    container_name: msnotification
+    networks:
+      - ms-network
+    volumes:
+      - ./logs:/var/lib/logs
+    env_file:
+      - .env
+
+networks:
+  ms-network:
+    external: true
+    name: ms-network
