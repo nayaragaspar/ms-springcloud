@@ -1,0 +1,13 @@
+package com.nayaragaspar.msveiculo;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+class MsVeiculoApplicationTests {
+
+	@Test
+	void contextLoads() {
+	}
+
+}
