@@ -39,6 +39,12 @@ public class VeiculoController {
         return ResponseEntity.ok(veiculoService.findById(id));
     }
 
+    @Operation(summary = "Buscar veículo por ID")
+    @GetMapping("/tag/{epcTag}")
+    public ResponseEntity<Veiculo> findByEpcTag(@PathVariable String epcTag) {
+        return ResponseEntity.ok(veiculoService.findByEpcTag(epcTag));
+    }
+
     @Operation(summary = "Cadastrar veículo")
     @PostMapping
     public ResponseEntity<Veiculo> save(@Valid @RequestBody SalvarVeiculoDto veiculo) {

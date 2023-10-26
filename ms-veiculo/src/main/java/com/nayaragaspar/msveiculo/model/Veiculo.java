@@ -26,7 +26,7 @@ public class Veiculo {
     private String modelo;
     @Column
     private String marca;
-    @Column
+    @Column(unique = true)
     private String epcTag;
     @Column
     private String memoryTag;

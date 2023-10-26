@@ -26,7 +26,16 @@ public class VeiculoService {
     }
 
     public Veiculo findById(UUID id) {
-        return veiculoRepository.findById(id).orElseThrow(() -> new NotFoundException("Cliente não encontrado"));
+        return veiculoRepository.findById(id).orElseThrow(() -> new NotFoundException("Veículo não encontrado"));
+    }
+
+    public Veiculo findByEpcTag(String epcTag) {
+        List<Veiculo> veiculos = veiculoRepository.findByEpcTag(epcTag);
+        if (veiculos.isEmpty()) {
+            throw new NotFoundException("Veículo não encontrado");
+        }
+
+        return veiculos.get(0);
     }
 
     public Veiculo save(SalvarVeiculoDto veiculo) {
