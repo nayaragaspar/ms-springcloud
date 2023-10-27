@@ -11,6 +11,7 @@ import com.nayaragaspar.msveiculo.exception.NotFoundException;
 import com.nayaragaspar.msveiculo.model.Motorista;
 import com.nayaragaspar.msveiculo.model.Veiculo;
 import com.nayaragaspar.msveiculo.model.dto.SalvarVeiculoDto;
+import com.nayaragaspar.msveiculo.producer.VeiculoProducer;
 import com.nayaragaspar.msveiculo.repository.VeiculoRepository;
 
 import lombok.RequiredArgsConstructor;
@@ -19,6 +20,7 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class VeiculoService {
     private final VeiculoRepository veiculoRepository;
+    private final VeiculoProducer veiculoProducer;
     private final MotoristaService motoristaService;
 
     public List<Veiculo> findAll() {
@@ -45,6 +47,7 @@ public class VeiculoService {
             Veiculo result = veiculoRepository.save(veiculo.toModel(motorista));
 
             // gerar evento de gravação de veiculo
+            veiculoProducer.publishNovoVeiculoMessage(result);
 
             return result;
         } catch (DataIntegrityViolationException e) {
