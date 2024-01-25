@@ -42,7 +42,7 @@ public class ApiKeyFilter implements GatewayFilter, Ordered {
 
     @Override
     public int getOrder() {
-        return Ordered.LOWEST_PRECEDENCE;
+        return Ordered.HIGHEST_PRECEDENCE;
     }
 
     private boolean checkApikey(String routeId, String apikey) {
