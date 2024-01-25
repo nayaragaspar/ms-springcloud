@@ -11,3 +11,7 @@ Os micrsserviços que não estão no mesmo repositório:
 - Service config: https://github.com/nayaragaspar/config-server
 - Configurações de ambiente: https://github.com/nayaragaspar/spring-config-properties
 
+# Fluxo: 
+
+![image](https://github.com/nayaragaspar/ms-springcloud/assets/27823372/2d9a39da-dfea-4eda-8284-959843f08e8e)
+
