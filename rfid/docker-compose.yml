@@ -1,0 +1,16 @@
+services:
+  gp-rfid:
+    build: .
+    container_name: gp-rfid
+    volumes:
+      - ./logs:/var/lib/logs
+    env_file:
+      - .env
+    restart: unless-stopped
+    ports:
+      - '8097:8097'
+    network_mode: 'host'
+networks:
+  ms-network:
+    external: true
+    name: ms-network

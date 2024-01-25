@@ -1,0 +1,39 @@
+{
+  "properties": [
+    {
+      "name": "broker.queue.tag",
+      "type": "java.lang.String",
+      "description": "Fila Tag"
+    },
+    {
+      "name": "broker.queue.reader-exception",
+      "type": "java.lang.String",
+      "description": "Fila Exceção"
+    },
+    {
+      "name": "broker.queue.antena",
+      "type": "java.lang.String",
+      "description": "Fila que trata conexão/disconexão de antena"
+    },
+    {
+      "name": "broker.exchange.resource",
+      "type": "java.lang.String",
+      "description": "Busca cadastro de recursos do EBS"
+    },
+    {
+      "name": "http.auth-token-header-name",
+      "type": "java.lang.String",
+      "description": "Nome do cabeçalho da ApiKey"
+    },
+    {
+      "name": "http.auth-token",
+      "type": "java.lang.String",
+      "description": "Valor da ApiKey"
+    },
+    {
+      "name": "app.token.secret-key",
+      "type": "java.lang.String",
+      "description": "Secret para validação do JWT"
+    }
+  ]
+}
